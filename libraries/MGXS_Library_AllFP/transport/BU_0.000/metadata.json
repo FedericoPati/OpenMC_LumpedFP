@@ -1,0 +1,29 @@
+{
+  "bu_step": 0,
+  "burnup_MWdkg": 0.0,
+  "description": "Fresh fuel - transport only (no depletion)",
+  "temperature": 1500,
+  "n_energy_groups": 33,
+  "n_nuclides": 9,
+  "nuclides": [
+    "Am241",
+    "O16",
+    "Pu238",
+    "Pu239",
+    "Pu240",
+    "Pu241",
+    "Pu242",
+    "U235",
+    "U238"
+  ],
+  "transport_reactions": [
+    "total",
+    "absorption",
+    "fission",
+    "nu-fission",
+    "chi",
+    "nu-scatter matrix",
+    "scatter matrix",
+    "multiplicity matrix"
+  ]
+}
