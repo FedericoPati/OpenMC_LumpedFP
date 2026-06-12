@@ -1,42 +1,54 @@
-# Lumped Fission Products for OpenMC
+# OpenMC-LFP
 
-This repository contains the code and data developed during my Master's Thesis on the generation and application of parent-specific Lumped Fission Products (LFPs) for multigroup depletion calculations in OpenMC.
+This repository contains the code and data developed for my Master's Thesis on the generation and application of parent-specific Lumped Fission Products (LFPs) for multigroup depletion calculations in OpenMC.
 
-The objective of the work is to reduce the computational cost of Monte Carlo depletion by replacing the explicit treatment of hundreds of fission products with a reduced set of parent-specific lumped pseudo-nuclides while preserving their neutronic impact.
-
-The repository includes:
+The objective of the work is to reduce the computational cost of Monte Carlo depletion by replacing the explicit treatment of many fission products with a reduced set of parent-specific lumped pseudo-nuclides, while preserving their aggregate neutronic effect.
 
 ## Repository Structure
 
-### `custom_chain.xml`
-Customized OpenMC depletion chain containing the parent-specific LFPs used in this work.
+### `chains/`
 
-### `simplified_chain.txt`
-Human-readable description of the depletion chain used to generate `custom_chain.xml`.
+Contains the depletion-chain files and tools.
 
-### `chain_creator.py`
-Utility script that generates `custom_chain.xml` starting from `simplified_chain.txt`.
+- `custom_chain.xml`: customized OpenMC depletion chain including the parent-specific LFPs.
+- `simplified_chain.txt`: human-readable chain description used to generate `custom_chain.xml`.
+- `chain_creator.py`: script used to generate the customized OpenMC depletion chain from `simplified_chain.txt`.
 
-### `LFP_XS_Library.py`
-Script used to extract multigroup cross sections from OpenMC tallies and generate the corresponding LFP libraries.
+### `library_generation/`
 
-### `MGXS_Library/`
-Burnup-dependent ECCO-33 multigroup cross-section libraries used in the thesis calculations.
+Contains the scripts used to generate the LFP multigroup cross-section libraries.
 
-### `MGXS_Library_AllFP/`
-Multigroup cross sections generated using the full explicit fission-product inventory. These data are included for comparison purposes and possible future developments.
+- `LFP_XS_Library.py`: extracts multigroup cross sections from OpenMC tally outputs and constructs the LFP libraries according to the customized depletion chain.
 
-### `WrapClass/`
-Contains the Python classes used to manage the burnup-dependent libraries and perform coupled multigroup transport-depletion calculations. A more detailed description is provided in the README file inside the folder.
+### `libraries/`
 
-### `Coupled_LFP/`
-Example application of the framework to the Superphénix reference pin-cell model.
+Contains the multigroup cross-section libraries used in the work.
 
-### `Coupled_LFP_ESFR/`
-Example application of the framework to an ESFR-like pin-cell model.
+- `MGXS_Library/`: burnup-dependent ECCO-33 multigroup cross-section libraries containing the parent-specific LFPs.
+- `Library_MGXS_AllFP/`: multigroup cross-section libraries generated with explicit fission products, included for comparison and possible future developments.
+
+### `framework/`
+
+Contains the Python classes used to perform coupled multigroup transport and depletion calculations with burnup-dependent libraries.
+
+Main components:
+
+- `MGXSLibraryManager`: manages the burnup-dependent multigroup cross-section libraries and returns the data required at each burnup step.
+- `CoupledDepletionDriver`: orchestrates the coupled multigroup transport-depletion loop, including transport execution, flux extraction, depletion, material reconstruction, and library selection.
+
+A more detailed description of the framework is provided inside the folder.
+
+### `examples/`
+
+Contains example applications of the framework.
+
+- `Superphenix/`: application to the Superphénix-like reference pin-cell model.
+- `ESFR/`: application to the ESFR-like pin-cell model used for the transferability test.
+
 
 ## Reference
 
-The methodology is described in:
+This repository is associated with the following Master's Thesis:
 
-Federico Pati, *Generation and Application of Parent-Specific Lumped Fission Products for OpenMC Multigroup Depletion Calculations*, Master's Thesis, Politecnico di Torino / KTH Royal Institute of Technology, 2026.
+Federico Pati, *Methodology for Generation of Multi-Group Lumped Fission Products for Fast Spectrum*, Master's Thesis, Politecnico di Torino and KTH Royal Institute of Technology, 2025/2026.
+
