@@ -1,0 +1,42 @@
+{
+  "bu_step": 17,
+  "burnup_MWdkg": 70.0,
+  "temperature": 1500,
+  "n_energy_groups": 33,
+  "n_nuclides": 41,
+  "n_lfp_nuclides": 17,
+  "depletion_reactions": [
+    "fission",
+    "(n,gamma)",
+    "(n,2n)"
+  ],
+  "transport_reactions": [
+    "total",
+    "absorption",
+    "fission",
+    "nu-fission",
+    "chi",
+    "nu-scatter matrix",
+    "scatter matrix",
+    "multiplicity matrix"
+  ],
+  "lfp_nuclides": [
+    "LFP_Am241",
+    "LFP_Am242_m1",
+    "LFP_Am243",
+    "LFP_Cm242",
+    "LFP_Cm243",
+    "LFP_Cm244",
+    "LFP_Cm245",
+    "LFP_Np237",
+    "LFP_Pu238",
+    "LFP_Pu239",
+    "LFP_Pu240",
+    "LFP_Pu241",
+    "LFP_Pu242",
+    "LFP_U234",
+    "LFP_U235",
+    "LFP_U236",
+    "LFP_U238"
+  ]
+}

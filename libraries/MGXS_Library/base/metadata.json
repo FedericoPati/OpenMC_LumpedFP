@@ -1,0 +1,103 @@
+{
+  "temperature": 673.0,
+  "n_energy_groups": 33,
+  "n_nuclides": 33,
+  "nuclides": [
+    "C12",
+    "C13",
+    "Si28",
+    "Si29",
+    "Si30",
+    "P31",
+    "Ti46",
+    "Ti47",
+    "Ti48",
+    "Ti49",
+    "Ti50",
+    "Cr50",
+    "Cr52",
+    "Cr53",
+    "Cr54",
+    "Mn55",
+    "Fe54",
+    "Fe56",
+    "Fe57",
+    "Fe58",
+    "Ni58",
+    "Ni60",
+    "Ni62",
+    "Ni64",
+    "Mo92",
+    "Mo94",
+    "Mo95",
+    "Mo96",
+    "Mo97",
+    "Mo98",
+    "Mo100",
+    "He4",
+    "Na23"
+  ],
+  "materials": {
+    "clad": {
+      "id": 3,
+      "nuclides": [
+        "C12",
+        "C13",
+        "Si28",
+        "Si29",
+        "Si30",
+        "P31",
+        "Ti46",
+        "Ti47",
+        "Ti48",
+        "Ti49",
+        "Ti50",
+        "Cr50",
+        "Cr52",
+        "Cr53",
+        "Cr54",
+        "Mn55",
+        "Fe54",
+        "Fe56",
+        "Fe57",
+        "Fe58",
+        "Ni58",
+        "Ni60",
+        "Ni62",
+        "Ni64",
+        "Mo92",
+        "Mo94",
+        "Mo95",
+        "Mo96",
+        "Mo97",
+        "Mo98",
+        "Mo100"
+      ],
+      "temperature": 673.0
+    },
+    "gap": {
+      "id": 2,
+      "nuclides": [
+        "He4"
+      ],
+      "temperature": 673.0
+    },
+    "cool": {
+      "id": 4,
+      "nuclides": [
+        "Na23"
+      ],
+      "temperature": 673.0
+    }
+  },
+  "transport_reactions": [
+    "total",
+    "absorption",
+    "fission",
+    "nu-fission",
+    "chi",
+    "nu-scatter matrix",
+    "scatter matrix",
+    "multiplicity matrix"
+  ]
+}
